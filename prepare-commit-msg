@@ -68,3 +68,10 @@ fi
 echo "$COMMIT_MSG" > "$COMMIT_MSG_FILE"
 
 echo "Generated commit message using Claude Haiku" >&2
+
+# Check for and run local hook if it exists
+PROJECT_HOOK=".git/hooks/pre-commit"
+if [ -f "$PROJECT_HOOK" ]; then
+    echo "Running local pre-commit hook..."
+    "$PROJECT_HOOK" "$@"
+fi
