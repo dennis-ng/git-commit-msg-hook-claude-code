@@ -1,13 +1,13 @@
 # git-commit-msg-hook-claude-code
 Add a git hook to automatically create a commit message using claude code
 
+Set up global git hook folder if you have not done so already:
+  git config --global core.hooksPath /path/to/global/.githooks/
 
 Installation:
-  cp prepare-commit-msg /path/to/your/repo/.git/hooks/
-  chmod +x /path/to/your/repo/.git/hooks/prepare-commit-msg
+  chmod +x prepare-commit-msg
+  cp prepare-commit-msg /path/to/global/.githooks/
 
-Installing globally with this folder as the source of all git hooks
-  git config --global core.hooksPath $(PWD)
 
 Requirements:
   - Claude CLI installed and authenticated (no need to manage API keys manually)
